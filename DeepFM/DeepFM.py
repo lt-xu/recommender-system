@@ -193,7 +193,6 @@ out = tf.nn.sigmoid(tf.add(tf.matmul(concat_input,weights['concat_projection']),
 #     return Xi[start:end], Xv[start:end], y[start:end].reshape(-1,1)
 # num_batch = train_feature_index.shape[0]//dfm_params['batch_size'] + 1
 # %%
-# TODO:dropout 对比数据预处理
 loss = tf.losses.log_loss(tf.reshape(label, [-1, 1]), out)
 loss_value_ = tf.placeholder(dtype=np.float32, name='loss_values_')
 train_loss_summary = tf.summary.scalar(name='train_loss', tensor=loss_value_)
